@@ -4,9 +4,9 @@ import { VscCode } from "react-icons/vsc";
 
 function Logo() {
   return (
-    <Button size="icon" asChild>
+    <Button size="lg" asChild>
       <Link href="/">
-        <VscCode className="w-6 h-6" />
+        <VscCode className="size-10" />
       </Link>
     </Button>
   );

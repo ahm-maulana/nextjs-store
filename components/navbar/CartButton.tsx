@@ -8,7 +8,7 @@ function CartButton() {
   return (
     <Button size="icon" variant="outline" className="relative" asChild>
       <Link href="/cart">
-        <LuShoppingCart className="w-6 h-6" />
+        <LuShoppingCart className="size-5" />
         <span className="absolute -top-3 -right-3 flex items-center justify-center bg-primary text-white rounded-full w-6 h-6 text-xs">
           {numItemsInCart}
         </span>
