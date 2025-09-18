@@ -5,7 +5,7 @@ import { Separator } from "../ui/separator";
 import Link from "next/link";
 import ProductsGrid from "./ProductsGrid";
 import ProductsList from "./ProductsList";
-import { Input } from "../ui/input";
+import ProductSearch from "./ProductSearch";
 
 async function ProductsContainer({
   search,
@@ -14,19 +14,12 @@ async function ProductsContainer({
   search: string;
   layout: string;
 }) {
-  const products = await fetchAllProducts();
+  const products = await fetchAllProducts({ search });
   const totalProducts = products.length;
   const searchTerm = search ? `&search=${search}` : "";
   return (
     <section>
-      <div className="max-w-xs ml-auto">
-        <Input
-          type="search"
-          name="search"
-          placeholder="search product..."
-          className="border-2"
-        />
-      </div>
+      <ProductSearch />
       <div className="mt-8 flex justify-between items-center">
         <h4 className="text-lg font-medium">
           {totalProducts} product{totalProducts > 1 && "s"}
